@@ -59,13 +59,13 @@ function App() {
 
   const getCardForProduct = (el) => {
     let card = (
-      <Card style={{ width: "15rem", height: "100%", backgroundColor: "#505050", color: "#000000" }}>
-        <Card.Img className="card-img-top" src={el.image} alt="Card image cap" style={{ scale: "85%", minHeight: "250px", maxHeight: "250px", width: "auto", objectFit: "cover" }} />
+      <Card style={{ width: "20rem", height: "100%", backgroundColor: "#505050", color: "#000000" }}>
+        <Card.Img className="card-img-top" src={el.image} alt="Card image cap" style={{ scale: "85%", minHeight: "250px", maxHeight: "250px", width: "auto", objectFit: "contain" }} />
         <Card.Body className="d-flex flex-column card-content" style={{ height: "100%" }}>
           <Card.Title className="card-title" style={{ height: "20%" }}>{el.title}</Card.Title>
           <Card.Text className="card-text" style={{ height: "5%" }}>Product Id: {el.id}</Card.Text>
           <Card.Text className="card-text" style={{ height: "5%" }}>Price: {numToPrice(el.price)}</Card.Text>
-          <Card.Text className="card-text" style={{ height: "45%" }}>Description: {el.description}</Card.Text>
+          <Card.Text className="card-text" style={{ height: "50%" }}>Description: {el.description}</Card.Text>
           <Card.Text className="card-text" style={{ height: "10%" }}>Product Rating: {el.rating.rate}</Card.Text>
           <Card.Text className="card-text" style={{ height: "10%" }}>Rating Count: {el.rating.count}</Card.Text>
         </Card.Body>
@@ -77,6 +77,7 @@ function App() {
   function Browse(){
     const [displayProducts, setDisplayProducts] = useState([]);
     const [loading, setLoading] = useState(true);
+    const [idInput, setIdInput] = useState(null);
 
     useEffect(() => {
       async function fetchData(){
@@ -96,8 +97,24 @@ function App() {
       </Col>
     ));
 
+    const handleIdInputChange = (event) => {
+      setIdInput(event.target.value);
+    }
+
+    const handleIdSearch = async() => {
+      
+    }
+
+    const searchbar = (
+      <div>
+        <input type="search" onChange={handleIdInputChange} placeholder='Enter Product Id' />
+        <Button onClick={handleIdSearch}>Search</Button>
+      </div>
+    );
+
     return(
       <div>
+        {searchbar}
         <div>
           <Container>
             <Row>
@@ -169,7 +186,8 @@ function App() {
         "description": data.description,
         "category": data.category,
         "image": data.image,
-        "rating": {"rate": Number(data.ratingScore),
+        "rating": {
+                  "rate": Number(data.ratingScore),
                   "count": Number(data.ratingCount)
                   }
       }
@@ -257,19 +275,32 @@ function App() {
     );
   }
 
+  function About(){
+
+    return (
+      <div>
+        Hello
+      </div>
+    );
+  }
+
   return (
     <div>
-      <div>
-        <Button onClick={() => setViewer(0)}>Browse</Button>
-        <Button onClick={() => setViewer(1)}>Edit</Button>
-        <Button onClick={() => setViewer(2)}>Add</Button>
-        <Button onClick={() => setViewer(3)}>Delete</Button>
+      <div class="button-area">
+        <div class="button-display">
+          <Button onClick={() => setViewer(0)}>Browse</Button>
+          <Button onClick={() => setViewer(1)}>Edit</Button>
+          <Button onClick={() => setViewer(2)}>Add</Button>
+          <Button onClick={() => setViewer(3)}>Delete</Button>
+          <Button onClick={() => setViewer(4)}>About Us</Button>
+        </div>
       </div>
       <div>
         {viewer===0 && <Browse />}
         {viewer===1 && <Edit />}
         {viewer===2 && <Add />}
         {viewer===3 && <Delete />}
+        {viewer===4 && <About />}
       </div>
     </div>
   );
