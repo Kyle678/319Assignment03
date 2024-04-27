@@ -77,7 +77,7 @@ function App() {
   function Browse(){
     const [displayProducts, setDisplayProducts] = useState([]);
     const [loading, setLoading] = useState(true);
-    const [idInput, setIdInput] = useState(null);
+    const [idInput, setIdInput] = useState("");
 
     useEffect(() => {
       async function fetchData(){
@@ -91,9 +91,9 @@ function App() {
     if (loading) {
       return <p>Loading...</p>;
     }
-    const listItems = displayProducts.map((el) => (
+    let listItems = displayProducts.map((el) => (
       <Col key={el.id} xs={12} sm={6} md={4} lg={3} className="mb-4">
-        {getCardForProduct(el)}
+        {(idInput==="" || el.id==idInput) && getCardForProduct(el)}
       </Col>
     ));
 
@@ -101,14 +101,9 @@ function App() {
       setIdInput(event.target.value);
     }
 
-    const handleIdSearch = async() => {
-      
-    }
-
     const searchbar = (
       <div>
         <input type="search" onChange={handleIdInputChange} placeholder='Enter Product Id' />
-        <Button onClick={handleIdSearch}>Search</Button>
       </div>
     );
 
