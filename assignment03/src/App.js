@@ -286,7 +286,37 @@ function App() {
 
     return (
       <div>
-        Hello
+        <div class="row mb-2">
+          <div class="col-md-6">
+            <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+              <div class="col p-4 d-flex flex-column position-static">
+                <strong class="d-inline-block mb-2 text-primary-emphasis">Student 1</strong>
+                <h3 class="mb-0">Drew Kearns</h3>
+                <div class="mb-1 text-body-secondary">April 27, 2024</div>
+                <p class="card-text mb-auto">Email: <a class="hoverEmail" href="mailto: dkearns@iastate.edu">dkearns@iastate.edu</a></p>
+                <p class="mb-auto">Drew is ending his fifth semester at Iowa State this year after doing a coopeative experience 
+                  during the last Summer/Fall semester. He is also a Spring 2023 Ultimate Frisbee Intramural Champion.</p>
+              </div>
+              <div class="col-auto d-none d-lg-block">
+                <img width="200" height="250" src="../images/Kearns.jpg" aria-label="Drew Kearns" preserveAspectRatio="xMidYMid slice" focusable="false" /><title>Drew Kearns</title>
+              </div>
+            </div>
+          </div>
+        <div class="col-md-6">
+        <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+          <div class="col p-4 d-flex flex-column position-static">
+            <strong class="d-inline-block mb-2 text-success-emphasis">Student 2</strong>
+              <h3 class="mb-0">Kyle Maloney</h3>
+                <div class="mb-1 text-body-secondary">April 27, 2024</div>
+                  <p class="card-text mb-auto">Email: <a class="hoverEmail" href="mailto: kyletm@iastate.edu">kyletm@iastate.edu</a></p>
+                  <p class="mb-auto">Kyle is ending his sixth semester at Iowa State. He is a software engineer major who enjoys playing volleyball and basketball.</p>
+                </div>
+              <div class="col-auto d-none d-lg-block">
+                <img width="200" height="250" src="../images/Kyle.jpg" aria-label="Kyle Maloney" preserveAspectRatio="xMidYMid slice" focusable="false" /><title>Kyle Maloney</title>
+            </div>
+          </div>
+          </div>
+        </div>
       </div>
     );
   }
