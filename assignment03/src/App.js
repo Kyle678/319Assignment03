@@ -150,7 +150,7 @@ function App() {
     };
 
     const searchbar = (
-      <div class="centering small-buffer">
+      <div className="centering small-buffer">
         <input
           type="search"
           onChange={handleIdInputChange}
@@ -208,9 +208,9 @@ function App() {
     );
 
     return (
-      <div class="centering">
-        <div class="edit-delete-format">
-          <div class="centering">
+      <div className="centering">
+        <div className="edit-delete-format">
+          <div className="centering">
             <input
               onChange={handleInput1Change}
               type="text"
@@ -218,8 +218,8 @@ function App() {
             />
             <Button onClick={handleInput1Click}>Search</Button>
           </div>
-          <div class="centering single-display-card">{displayCard}</div>
-          <div class="centering">{displayCard != null && priceInputBox}</div>
+          <div className="centering single-display-card">{displayCard}</div>
+          <div className="centering">{displayCard != null && priceInputBox}</div>
         </div>
       </div>
     );
@@ -346,9 +346,9 @@ function App() {
     );
 
     return (
-      <div class="centering">
-        <div class="edit-delete-format">
-          <div class="centering">
+      <div className="centering">
+        <div className="edit-delete-format">
+          <div className="centering">
             <input
               onChange={handleIdInputChange}
               type="text"
@@ -356,8 +356,8 @@ function App() {
             />
             <Button onClick={handleIdInputClick}>Search</Button>
           </div>
-          <div class="centering single-display-card">{displayCard}</div>
-          <div class="centering">{displayCard != null && confirmButton}</div>
+          <div className="centering single-display-card">{displayCard}</div>
+          <div className="centering">{displayCard != null && confirmButton}</div>
         </div>
       </div>
     );
@@ -365,39 +365,47 @@ function App() {
 
   function About() {
     return (
-      <div className="centering">
-        <div class="p-4 p-md-5 mb-4 rounded text-body-emphasis bg-body-secondary">
-          <div class="col-lg-6 px-0">
-            <h1 class="display-4 fst-italic">
+      <div className="centering stack">
+        <div className="centering p-4 p-md-5 mb-4 rounded text-body-emphasis bg-body-secondary">
+          <div className="col-lg-6 px-0">
+            <h1 className="display-4 fst-italic">
               Com S 319: Construction of User Interfaces
             </h1>
-            <p class="lead my-3">Professor: Dr. Ali Jannesari</p>
+            <p className="lead my-3">Professor: Dr. Ali Jannesari</p>
+            <p className="lead my-3">
+              For our assignment 3 project we have implemented all necessary functionalities
+              including the ability to GET all products from the catalog which is stored in
+              a mongo database, using PUT to edit the price of a product, CREATE to add a new
+              product, and DELETE to remove a product from the catolog. Each option is available
+              from their respective button on the navbar.
+            </p>
           </div>
         </div>
+        <div className="centering">
         <div className="about">
-          <div class="row mb-2">
-            <div class="col-md-6">
-              <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-                <div class="col p-4 d-flex flex-column position-static">
-                  <strong class="d-inline-block mb-2 text-primary-emphasis">
+          <div className="row mb-2">
+            <div className="col-md-6">
+              <div className="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                <div className="col p-4 d-flex flex-column position-static">
+                  <strong className="d-inline-block mb-2 text-primary-emphasis">
                     Student 1
                   </strong>
-                  <h3 class="mb-0">Drew Kearns</h3>
-                  <div class="mb-1 text-body-secondary">April 27, 2024</div>
-                  <p class="card-text mb-auto">
+                  <h3 className="mb-0">Drew Kearns</h3>
+                  <div className="mb-1 text-body-secondary">April 27, 2024</div>
+                  <p className="card-text mb-auto">
                     Email:{" "}
-                    <a class="hoverEmail" href="mailto: dkearns@iastate.edu">
+                    <a className="hoverEmail" href="mailto: dkearns@iastate.edu">
                       dkearns@iastate.edu
                     </a>
                   </p>
-                  <p class="mb-auto">
+                  <p className="mb-auto">
                     Drew is ending his fifth semester at Iowa State this year
                     after doing a coopeative experience during the last
                     Summer/Fall semester. He is also a Spring 2023 Ultimate
                     Frisbee Intramural Champion.
                   </p>
                 </div>
-                <div class="col-auto d-none d-lg-block">
+                <div className="col-auto d-none d-lg-block">
                   <img
                     width="200"
                     height="250"
@@ -410,27 +418,27 @@ function App() {
                 </div>
               </div>
             </div>
-            <div class="col-md-6">
-              <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-                <div class="col p-4 d-flex flex-column position-static">
-                  <strong class="d-inline-block mb-2 text-success-emphasis">
+            <div className="col-md-6">
+              <div className="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                <div className="col p-4 d-flex flex-column position-static">
+                  <strong className="d-inline-block mb-2 text-success-emphasis">
                     Student 2
                   </strong>
-                  <h3 class="mb-0">Kyle Maloney</h3>
-                  <div class="mb-1 text-body-secondary">April 27, 2024</div>
-                  <p class="card-text mb-auto">
+                  <h3 className="mb-0">Kyle Maloney</h3>
+                  <div className="mb-1 text-body-secondary">April 27, 2024</div>
+                  <p className="card-text mb-auto">
                     Email:{" "}
-                    <a class="hoverEmail" href="mailto: kyletm@iastate.edu">
+                    <a className="hoverEmail" href="mailto: kyletm@iastate.edu">
                       kyletm@iastate.edu
                     </a>
                   </p>
-                  <p class="mb-auto">
+                  <p className="mb-auto">
                     Kyle is ending his sixth semester at Iowa State. He is a
                     software engineer major who enjoys playing volleyball and
                     basketball.
                   </p>
                 </div>
-                <div class="col-auto d-none d-lg-block">
+                <div className="col-auto d-none d-lg-block">
                   <img
                     width="200"
                     height="250"
@@ -444,15 +452,16 @@ function App() {
               </div>
             </div>
           </div>
+          </div>
         </div>
       </div>
     );
   }
 
   return (
-    <div class="main-body">
-      <div class="button-area">
-        <div class="button-display">
+    <div className="main-body">
+      <div className="button-area">
+        <div className="button-display">
           <Button onClick={() => setViewer(0)}>Browse</Button>
           <Button onClick={() => setViewer(1)}>Edit</Button>
           <Button onClick={() => setViewer(2)}>Add</Button>
