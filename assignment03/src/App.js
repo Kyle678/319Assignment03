@@ -19,6 +19,11 @@ function App() {
     let response = await fetch(
       "http://localhost:8081/getProduct/" + product_id
     );
+    console.log(response.status);
+    if(response.status===500){
+      console.log("bruh");
+      return null;
+    }
     let data = await response.json();
     return data;
   };
@@ -142,11 +147,16 @@ function App() {
       setIdInput(event.target.value);
       let pd = null;
       if (event.target.value !== "") {
-        pd = [await getProductById(event.target.value)];
+        pd = await getProductById(event.target.value);
+        console.log(pd);
+        if(pd==null){
+          setDisplayProducts([]);
+        }else{
+          setDisplayProducts([pd]);
+        }
       } else {
-        pd = await getProducts();
+        setDisplayProducts(await getProducts());
       }
-      setDisplayProducts(pd);
     };
 
     const searchbar = (

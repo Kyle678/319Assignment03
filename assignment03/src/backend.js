@@ -40,9 +40,14 @@ app.get("/getProduct/:id", async(req, res) => {
     console.log(query);
     const results = await db.collection("fakestore_catalog")
                             .findOne(query);
-    console.log(results);
-    res.status(200);
-    res.send(results);
+    if(results==null){
+        res.status(500);
+        res.send(results);
+    }else{
+        console.log(results);
+        res.status(200);
+        res.send(results);
+    }
 })
 
 app.post("/addProduct", async(req, res) => {
