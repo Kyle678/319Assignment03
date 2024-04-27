@@ -61,7 +61,7 @@
 }
 
 .main-body {
-  background-color: #282c34;
+  background-color: #AAAAAA;
   min-height: 100vh;
 }
 
@@ -72,4 +72,8 @@
 
 .small-buffer{
   margin-bottom: 1vh;
+}
+
+.about{
+  width: 90%;
 }

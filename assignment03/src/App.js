@@ -298,7 +298,7 @@ function App() {
                   during the last Summer/Fall semester. He is also a Spring 2023 Ultimate Frisbee Intramural Champion.</p>
               </div>
               <div class="col-auto d-none d-lg-block">
-                <img width="200" height="250" src="../images/Kearns.jpg" aria-label="Drew Kearns" preserveAspectRatio="xMidYMid slice" focusable="false" /><title>Drew Kearns</title>
+                <img width="200" height="250" src="./images/Kearns.jpg" aria-label="Drew Kearns" preserveAspectRatio="xMidYMid slice" focusable="false" /><title>Drew Kearns</title>
               </div>
             </div>
           </div>
@@ -312,7 +312,7 @@ function App() {
                   <p class="mb-auto">Kyle is ending his sixth semester at Iowa State. He is a software engineer major who enjoys playing volleyball and basketball.</p>
                 </div>
               <div class="col-auto d-none d-lg-block">
-                <img width="200" height="250" src="../images/Kyle.jpg" aria-label="Kyle Maloney" preserveAspectRatio="xMidYMid slice" focusable="false" /><title>Kyle Maloney</title>
+                <img width="200" height="250" src="./images/Kyle.jpg" aria-label="Kyle Maloney" preserveAspectRatio="xMidYMid slice" focusable="false" /><title>Kyle Maloney</title>
             </div>
           </div>
           </div>
