@@ -38,6 +38,8 @@
 }
 
 .button-area {
+  padding-top: 2vh;
+  padding-bottom: 2vh;
   display: flex;
   justify-content: center;
 }
@@ -46,4 +48,28 @@
   width: 30%;
   display: flex;
   justify-content: space-evenly;
+}
+
+.edit-delete-format {
+  display: block;
+  justify-content: center;
+}
+
+.centering {
+  display: flex;
+  justify-content: center;
+}
+
+.main-body {
+  background-color: #282c34;
+  min-height: 100vh;
+}
+
+.single-display-card {
+  margin-top: 1vh;
+  margin-bottom: 1vh;
+}
+
+.small-buffer{
+  margin-bottom: 1vh;
 }
