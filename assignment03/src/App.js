@@ -91,18 +91,26 @@ function App() {
     if (loading) {
       return <p>Loading...</p>;
     }
-    let listItems = displayProducts.map((el) => (
+
+    const listItems = displayProducts.map((el) => (
       <Col key={el.id} xs={12} sm={6} md={4} lg={3} className="mb-4">
-        {(idInput==="" || el.id==idInput) && getCardForProduct(el)}
+        {getCardForProduct(el)}
       </Col>
     ));
 
-    const handleIdInputChange = (event) => {
+    const handleIdInputChange = async (event) => {
       setIdInput(event.target.value);
+      let pd = null;
+      if(event.target.value!==""){
+        pd = [await getProductById(event.target.value)];
+      }else{
+        pd = await getProducts();
+      }
+      setDisplayProducts(pd);
     }
 
     const searchbar = (
-      <div>
+      <div class="centering small-buffer">
         <input type="search" onChange={handleIdInputChange} placeholder='Enter Product Id' />
       </div>
     );
@@ -148,22 +156,24 @@ function App() {
 
     const priceInputBox = (
       <div>
-        <input onChange={handlePriceInputChange} type="text" />
+        <input onChange={handlePriceInputChange} type="search" placeholder='Enter New Price' />
         <Button onClick={handlePriceChange}>Confirm</Button>
       </div>
     )
 
     return(
-      <div>
-        <div>
-          <input onChange={handleInput1Change} type="text" />
-          <Button onClick={handleInput1Click}>Click</Button>
-        </div>
-        <div>
-          {displayCard}
-        </div>
-        <div>
-          {displayCard!=null && priceInputBox}
+      <div class="centering">
+        <div class="edit-delete-format">
+          <div class="centering">
+            <input onChange={handleInput1Change} type="text" placeholder="Enter Product Id"/>
+            <Button onClick={handleInput1Click}>Search</Button>
+          </div>
+          <div class="centering single-display-card">
+            {displayCard}
+          </div>
+          <div class="centering">
+            {displayCard!=null && priceInputBox}
+          </div>
         </div>
       </div>
     );
@@ -255,16 +265,18 @@ function App() {
     );
 
     return (
-      <div>
-        <div>
-          <input onChange={handleIdInputChange} type="text" />
-          <Button onClick={handleIdInputClick}>Search</Button>
-        </div>
-        <div>
-          {displayCard}
-        </div>
-        <div>
-          {displayCard!=null && confirmButton}
+      <div class="centering">
+        <div class="edit-delete-format">
+          <div class="centering">
+            <input onChange={handleIdInputChange} type="text" placeholder="Enter Product Id" />
+            <Button onClick={handleIdInputClick}>Search</Button>
+          </div>
+          <div class="centering single-display-card">
+            {displayCard}
+          </div>
+          <div class="centering">
+            {displayCard!=null && confirmButton}
+          </div>
         </div>
       </div>
     );
@@ -310,7 +322,7 @@ function App() {
   }
 
   return (
-    <div>
+    <div class="main-body">
       <div class="button-area">
         <div class="button-display">
           <Button onClick={() => setViewer(0)}>Browse</Button>
